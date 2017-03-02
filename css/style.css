@@ -1,0 +1,98 @@
+.tu{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    background: rgba(0,0,0,0.3);
+    display: inline-block;
+    cursor: pointer;
+}
+.zi{
+    position: absolute;
+    top:0;
+    left:0;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    width: 400px;
+    height: 300px;
+}
+
+.kuang{
+    width: 350px;
+    height: 250px;
+    margin: 25px auto;
+}
+.kuang a{
+    display: block;
+    position: relative;
+    text-align: center;
+    line-height: 250px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image:-webkit-linear-gradient(left,yellow,green 25%,yellow 50%,green 75%,yellow 100%) ;
+    background-size: 200% 100%;
+    opacity: 0;
+}
+.tu:hover .kuang a{
+    animation:gradient 3s linear infinite;
+    opacity: 1;
+    transition: all .3s;
+}
+@keyframes gradient {
+    from{background-position: 0% 0%;}
+    to{background-position: -100% 0%;}
+}
+.tu:hover .mohu{
+    -webkit-filter: blur(5px);
+    -moz-filter:blur(5px);
+    -ms-filter: blur(5px);
+    filter:blur(5px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
+
+.kuang::before{
+    width: 0%;
+    height: 0;
+    top:50%;
+    border-left:2px solid #fff;
+    transition: all .3s;
+
+}
+.kuang::before,.kuang::after{
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    transition-property: height,width,left,top;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+.kuang::after{
+    width: 0;
+    height: 0px;
+    left: 50%;
+    border-top:2px solid #fff;
+    transition: all .3s;
+}
+.tu:hover .kuang::after{
+    width: 350px;
+    left:0%;
+    text-align: center;
+    margin-left: 25px ;
+    height: 250px;
+    border-bottom: 2px solid #fff;
+    margin-top: -250px;
+}
+.tu:hover .kuang::before{
+    width: 350px;
+    height: 250px;
+    top:0%;
+    margin: 25px auto;
+    border-right: 2px solid #ffffff;
+}
